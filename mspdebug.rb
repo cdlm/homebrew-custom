@@ -19,7 +19,7 @@ class Mspdebug <Formula
 
   def install
     ENV["PREFIX"] = prefix
-    inreplace "Makefile", "/opt", "/usr" # Don't assume MacPorts. (May not be necessary.)
+    inreplace "Makefile", "/opt/local", HOMEBREW_PREFIX # The makefile assumes MacPorts...
     system "make install"
   end
 
